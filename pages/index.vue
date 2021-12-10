@@ -17,8 +17,12 @@ export default {
       title: 'Welcome to the front page',
       images: images,
     }
+  },
+  async created() {
+		const response = await this.$axios.get('https://jsonplaceholder.typicode.com/photos')
+		this.images = response
+	},
   }
-}
 </script>
 
 <style>
